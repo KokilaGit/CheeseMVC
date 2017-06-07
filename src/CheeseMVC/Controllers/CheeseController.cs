@@ -15,9 +15,9 @@ namespace CheeseMVC.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.cheeses = CheeseData.GetAll();
+            List<Cheese> cheeses = CheeseData.GetAll();
 
-            return View();
+            return View(cheeses);
         }
 
         public IActionResult Add()
