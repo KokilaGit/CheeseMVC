@@ -30,21 +30,14 @@ namespace CheeseMVC.Controllers
         [HttpPost]        
         public IActionResult Add(AddCheeseViewModel addCheeseViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                Cheese newCheese = new Cheese
-                {
-                    Name = addCheeseViewModel.Name,
-                    Description = addCheeseViewModel.Description
-                };
-                // Add the new cheese to my existing cheeses
-                CheeseData.Add(newCheese);
-
-                return Redirect("/Cheese");
-
-            }
-            return View(addCheeseViewModel);
+            Cheese newCheese= new Cheese{
+                Name=addCheeseViewModel.Name,
+                Description=addCheeseViewModel.Description
+             };
+            // Add the new cheese to my existing cheeses
+            CheeseData.Add(newCheese);
             
+            return Redirect("/Cheese");
         }
 
         public IActionResult Remove()
