@@ -28,8 +28,12 @@ namespace CheeseMVC.Controllers
         }
 
         [HttpPost]        
-        public IActionResult Add(Cheese newCheese)
+        public IActionResult Add(AddCheeseViewModel addCheeseViewModel)
         {
+            Cheese newCheese= new Cheese{
+                Name=addCheeseViewModel.Name,
+                Description=addCheeseViewModel.Description
+             };
             // Add the new cheese to my existing cheeses
             CheeseData.Add(newCheese);
             
