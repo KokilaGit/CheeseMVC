@@ -14,6 +14,16 @@
         <input class="form-control" asp-for="Description" />
         <span asp-validation-for="Description"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <select asp-for="Type" asp-items="Model.CheeseTypes"></select>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="CheeseRating"></label>
+        <input class="form-control" asp-for="CheeseRating" />
+        <span asp-validation-for="CheeseRating"></span>
+    </div>
 
     <input type="submit" value="Add Cheese" />
 
